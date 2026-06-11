@@ -1,0 +1,59 @@
+.header {
+  display: flex;
+  min-height: 4rem;
+  padding-inline: calc(0.25rem * 8);
+  align-items: center;
+
+  &__title {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+     &--name {
+       color: #3B6228;
+       font-weight: 700;
+       font-size: 1.25rem;
+       font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+     }
+  }
+
+  &__actions {
+    display: flex;
+    margin-left: auto;
+    gap: 28px;
+    padding-right: 28px;
+    border-right: 0.5px solid oklch(37.3% 0.034 259.733);
+    font-size: 16px;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    color: oklch(37.3% 0.034 259.733);
+
+    > * {
+      cursor: pointer;
+    }
+
+    > *:hover {
+      color: #3B6228;
+    }
+  }
+
+  &__media {
+    display: flex;
+    gap: 12px;
+    margin-left: 20px;
+
+    > * {
+      cursor: pointer;
+      width: 1.25rem;
+      height: 1.25rem;
+      color: oklch(0.707 0.022 261.325);
+    }
+
+    >:nth-child(1):hover {
+      color: oklch(57.7% 0.245 27.325);
+    }
+
+    >:nth-child(2):hover {
+      color: oklch(65.6% 0.241 354.308);
+    }
+  }
+}
