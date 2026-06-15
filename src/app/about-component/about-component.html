@@ -1,0 +1,63 @@
+<div class="about">
+  <p class="about__title">About Jinro's Kitchen</p>
+  <p class="about__description">A journey of passion, flavor, and the love for bringing people together through food</p>
+</div>
+<div class="chef">
+  <div class="chef__details">
+    <div class="chef__title">Meet Chef Mariam</div>
+    <div class="chef__description">
+      <div class="chef__description--body">
+        Chef Jinro is a passionate culinary artist with over 15 years of experience in creating exceptional dishes that delight the senses. Trained in both traditional and modern cooking techniques, Jinro brings a unique fusion of flavors to every creation.
+        <br><br>
+        What started as a childhood fascination with cooking has evolved into a lifelong mission to share the joy of good food with people everywhere. From fine dining restaurants to the comfort of your home, Chef Jinro's dedication to quality and innovation shines through in every dish.
+        <br><br>
+        Beyond the kitchen, Chef Jinro is also a content creator, sharing cooking tips, recipes, and culinary adventures on YouTube. The goal is simple: inspire others to discover their own love for cooking and create memorable meals for their loved ones.
+      </div>
+      <div class="chef__description--stat">
+        <ng-container *ngFor="let data of cardData">
+          <div class="chef__description--stat__card">
+            <div *ngTemplateOutlet="data?.icon"></div>
+            <p class="chef__description--stat__card--title">{{data?.title}}</p>
+            <p class="chef__description--stat__card--description">{{data?.description}}</p>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="chef__picture">
+    <img src="assets/chef.jpg">
+  </div>
+</div>
+
+<section class="story">
+  <img src="assets/home.jpg">
+  <div>
+    <div class="chef__title">The Story Behind "Jinro's Kitchen"</div>
+    <div class="chef__description--body">
+      The name "Jinro" holds deep personal significance. In Korean, "Jin" (진) can mean "precious" or "genuine," while "Ro" (로) represents a path or way. Together, "Jinro's Kitchen" embodies the philosophy of following a genuine path in the culinary arts—one that honors authenticity, quality, and heartfelt passion.
+      <br><br>
+      The idea for Jinro's Kitchen was born during a particularly memorable family gathering. Surrounded by loved ones, sharing stories over a home-cooked meal, it became clear that food has an incredible power to connect people. This realization sparked the vision to create not just a cloud kitchen, but a community centered around the love of cooking and eating together.
+      <br><br>
+      Every recipe, every dish, and every video shared on our YouTube channel carries this spirit. Jinro's Kitchen isn't just about serving meals—it's about creating experiences, preserving culinary traditions, and inspiring the next generation of home cooks to explore their creativity in the kitchen.
+      <br><br>
+      Today, Jinro's Kitchen operates as a cloud kitchen, bringing restaurant-quality meals directly to your doorstep, while simultaneously building a vibrant online community through cooking tutorials and recipe sharing. It's a dream realized, one dish at a time.
+    </div>
+  </div>
+</section>
+
+<section class="mission">
+  <div class="chef__title">Our Mission</div>
+  <p class="mission__description">At Jinro's Kitchen, our mission is to make exceptional food accessible to everyone, whether through our cloud kitchen deliveries or our free YouTube cooking tutorials. We believe that everyone deserves to enjoy delicious, thoughtfully prepared meals, and we're committed to sharing the knowledge and skills that make great cooking possible.</p>
+  <div class="mission__quote">
+    "Cooking is not just about ingredients. It's about love, patience, and the joy of sharing."
+  </div>
+</section>
+
+
+<ng-template #experience>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award w-8 h-8 text-[#4A7A35] mx-auto mb-2"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path><circle cx="12" cy="8" r="6"></circle></svg>
+</ng-template>
+
+<ng-template #certified>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check w-8 h-8 text-[#4A7A35] mx-auto mb-2"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+</ng-template>
