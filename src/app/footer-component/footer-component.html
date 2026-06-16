@@ -9,15 +9,15 @@
     </div>
     <div class="footer__links">
       <p class="footer__links--title">Quick Links</p>
-      <p>Home</p>
-      <p>About</p>
-      <p>Menu</p>
-      <p>Recipes</p>
+      <p routerLink="/home">Home</p>
+      <p routerLink="/about">About</p>
+      <p routerLink="/menu">Menu</p>
+      <p *ngIf="false">Recipes</p>
     </div>
     <div class="footer__links">
       <p class="footer__links--title">Connect With Us</p>
-      <div>Youtube Channel</div>
-      <div>Instagram</div>
+      <div (click)="naviagte('https://www.instagram.com/jinros_kitchen/')">Youtube Channel</div>
+      <div (click)="naviagte('https://www.youtube.com/@Jinroskitchen')">Instagram</div>
     </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NgOptimizedImage} from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {RouterLink} from '@angular/router';
 
 @Component({
@@ -8,8 +8,13 @@ import {RouterLink} from '@angular/router';
   styleUrl: './header.less',
   imports: [
     NgOptimizedImage,
-    RouterLink
+    RouterLink,
+    CommonModule
   ],
   standalone: true
 })
-export class Header {}
+export class Header {
+  naviagte(url: string): void {
+    window.open(url, '_blank')
+  }
+}
