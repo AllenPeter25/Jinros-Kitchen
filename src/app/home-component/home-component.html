@@ -6,8 +6,8 @@
       <p class="greeting__content--description">Good Food, Happy Mood!</p>
       <p class="greeting__content--ps">Where cloud kitchen meets culinary creativity</p>
       <div class="greeting__content--buttons">
-        <button class="btn greeting__content--buttons__primary">View Our Menu</button>
-        <button class="btn greeting__content--buttons__secondary">Our Story</button>
+        <button routerLink="/menu" class="btn greeting__content--buttons__primary">View Our Menu</button>
+        <button routerLink="/about" class="btn greeting__content--buttons__secondary">Our Story</button>
       </div>
     </div>
   </div>
@@ -48,6 +48,6 @@
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube w-16 h-16 mx-auto mb-6 text-[#C8941A]" data-fg-ekyy65="1.22:10.52:/src/app/components/Home.tsx:120:11:6539:61:e:Youtube::::::CgUj" data-fgid-ekyy65=":r2l:"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg>
     <p class="youtube__body--text">Join Our Youtube Community</p>
     <p class="youtube__body--description">Subscribe to our channel for cooking tutorials, recipe ideas, and behind-the-scenes content</p>
-    <button class="youtube__body--button">Visit Our Channel</button>
+    <button (click)="navigate()" class="youtube__body--button">Visit Our Channel</button>
   </div>
 </section>

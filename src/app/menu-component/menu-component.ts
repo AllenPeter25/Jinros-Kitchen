@@ -21,7 +21,8 @@ export class MenuComponent implements AfterViewInit {
   platforms: {
     name?: string,
     color?: string,
-    svg?: TemplateRef<unknown>
+    svg?: TemplateRef<unknown>,
+    url: string
   }[] = [];
 
   menus = [
@@ -86,12 +87,14 @@ export class MenuComponent implements AfterViewInit {
     this.platforms = [{
       name: "Zomato",
       color: "#E23744",
-      svg: this.zomatoTemplate
+      svg: this.zomatoTemplate,
+      url: "https://www.zomato.com/bangalore/jinros-kitchen-hennur-bangalore"
     },
       {
         name: "Swiggy",
         color: "#FC8019",
-        svg: this.swiggyTemplate
+        svg: this.swiggyTemplate,
+        url: 'https://www.swiggy.com/city/bangalore/jinros-kitchen-geddalahalli-rest1383814'
       }]
 
     this.cdr.detectChanges();

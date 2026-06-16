@@ -5,9 +5,9 @@
   </div>
   <div class="menu__platform">
     <ng-container *ngFor="let platform of platforms">
-      <div style="border: 2px solid {{platform.color}}" class="menu__platform--partner">
+      <a [href]="platform?.url" target="_blank" rel="noopener noreferrer" style="border: 2px solid {{platform.color}}" class="menu__platform--partner">
         <div *ngTemplateOutlet="platform.svg"></div>
-      </div>
+      </a>
     </ng-container>
   </div>
 </section>
