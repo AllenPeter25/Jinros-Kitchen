@@ -57,4 +57,64 @@
       color: oklch(65.6% 0.241 354.308);
     }
   }
+
+  &__hamburger {
+    display: none;
+    transition: 0.2s ease-in-out;
+  }
+
+  &__cancel {
+    display: unset;
+    margin-left: auto;
+  }
+}
+
+.toolbar {
+  padding: 16px;
+
+  &__actions {
+    > * {
+      padding: 8px 12px;
+      font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      color: oklch(37.3% .034 259.733);
+      font-size: 16px;
+    }
+  }
+
+  &__media {
+    display: flex;
+    gap: 12px;
+    margin-left: 12px;
+    margin-top: 12px;
+
+    > * {
+      cursor: pointer;
+      width: 24px;
+      height: 24px;
+      color: oklch(0.707 0.022 261.325);
+    }
+  }
+}
+
+
+@media (max-width: 1498px) {
+  .header {
+    margin: 0 42px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    margin: 0;
+
+    &__media,
+    &__actions {
+      display: none;
+    }
+
+    &__hamburger {
+      display: unset;
+      margin-left: auto;
+    }
+  }
 }
