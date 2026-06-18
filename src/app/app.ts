@@ -14,8 +14,6 @@ import {filter} from 'rxjs';
     RouterOutlet,
     Header,
     FooterComponent,
-    MenuComponent,
-    AboutComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.less'

@@ -1,17 +1,20 @@
 <div class="header">
-  <div class="header__title">
+  <div routerLink="/home" class="header__title">
     <img src="assets/logo.jpg" alt="Logo" width="48" height="48">
     <div class="header__title--name">Jinro's Kitchen</div>
   </div>
   <div class="header__actions">
-    <div routerLink="/home">Home</div>
-    <div routerLink="/about">About</div>
-    <div routerLink="/menu">Menu</div>
-    <div *ngIf="false">Recipes</div>
+    <ng-container *ngFor="let action of actions()">
+      <div
+        [class._selected]="action.navigateTo === currentPath()"
+        [routerLink]="action.navigateTo"
+        (click)="viewToolbar.set(false)">
+        {{action.name}}
+      </div>
+    </ng-container>
   </div>
   <div class="header__media">
-    <svg (click)="naviagte('https://www.instagram.com/jinros_kitchen/')" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube w-5 h-5" data-fg-ccit18="1.17:10.57:/src/app/components/Layout.tsx:59:21:2633:28:e:Icon" data-fgid-ccit18=":re:"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg>
-    <svg (click)="naviagte('https://www.youtube.com/@Jinroskitchen')" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram w-5 h-5" data-fg-ccit18="1.17:10.57:/src/app/components/Layout.tsx:59:21:2633:28:e:Icon" data-fgid-ccit18=":rg:"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+    <ng-container *ngTemplateOutlet="media"></ng-container>
   </div>
   <svg *ngIf="!viewToolbar()" (click)="viewToolbarOptions()" class="header__hamburger" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -22,13 +25,21 @@
 </div>
 <div class="toolbar" *ngIf="viewToolbar()">
   <div class="toolbar__actions">
-    <div routerLink="/home">Home</div>
-    <div routerLink="/about">About</div>
-    <div routerLink="/menu">Menu</div>
-    <div *ngIf="false">Recipes</div>
+    <ng-container *ngFor="let action of actions()">
+      <div
+        [class._selected]="action.navigateTo === currentPath()"
+        [routerLink]="action.navigateTo"
+        (click)="viewToolbar.set(false)">
+          {{action.name}}
+      </div>
+    </ng-container>
   </div>
   <div class="toolbar__media">
-    <svg (click)="naviagte('https://www.instagram.com/jinros_kitchen/')" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube w-5 h-5" data-fg-ccit18="1.17:10.57:/src/app/components/Layout.tsx:59:21:2633:28:e:Icon" data-fgid-ccit18=":re:"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg>
-    <svg (click)="naviagte('https://www.youtube.com/@Jinroskitchen')" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram w-5 h-5" data-fg-ccit18="1.17:10.57:/src/app/components/Layout.tsx:59:21:2633:28:e:Icon" data-fgid-ccit18=":rg:"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+    <ng-container *ngTemplateOutlet="media"></ng-container>
   </div>
 </div>
+
+<ng-template #media>
+  <svg (click)="navigate('https://www.youtube.com/@Jinroskitchen')" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube w-5 h-5" data-fg-ccit18="1.17:10.57:/src/app/components/Layout.tsx:59:21:2633:28:e:Icon" data-fgid-ccit18=":re:"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg>
+  <svg (click)="navigate('https://www.instagram.com/jinroskitchen')" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram w-5 h-5" data-fg-ccit18="1.17:10.57:/src/app/components/Layout.tsx:59:21:2633:28:e:Icon" data-fgid-ccit18=":rg:"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+</ng-template>

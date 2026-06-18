@@ -88,7 +88,7 @@ export class MenuComponent implements AfterViewInit {
       name: "Zomato",
       color: "#E23744",
       svg: this.zomatoTemplate,
-      url: "https://www.zomato.com/bangalore/jinros-kitchen-hennur-bangalore"
+      url: "https://www.zomato.com/bangalore/jinros-kitchen-1-hennur-bangalore/order"
     },
       {
         name: "Swiggy",

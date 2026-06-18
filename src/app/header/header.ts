@@ -1,6 +1,7 @@
 import {Component, signal} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {RouterLink} from '@angular/router';
+import {NavigationEnd, Router, RouterLink} from '@angular/router';
+import {filter} from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +17,35 @@ export class Header {
 
   viewToolbar = signal(false);
 
-  naviagte(url: string): void {
+  actions = signal([
+    {
+      name: "Home",
+      navigateTo: "/home"
+    },
+    {
+      name: "About",
+      navigateTo: "/about"
+    },
+    {
+      name: "Menu",
+      navigateTo: "/menu"
+    }
+  ])
+
+  currentPath = signal("")
+
+  constructor(
+    private router: Router
+  ) {
+    this.router.events
+      .pipe(
+        filter(event => event instanceof NavigationEnd),
+      ).subscribe((event: NavigationEnd) => {
+        this.currentPath.set(event.urlAfterRedirects);
+    })
+  }
+
+  navigate(url: string): void {
     window.open(url, '_blank')
   }
 
