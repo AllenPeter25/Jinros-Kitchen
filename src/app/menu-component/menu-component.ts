@@ -75,6 +75,26 @@ export class MenuComponent implements AfterViewInit {
           price: 95
         }
       ]
+    },
+    {
+      category: "Beverages",
+      items: [
+        {
+          name: "Virgin Mojito",
+          description: "[non alcoholic] mint, lime and a splash of soda",
+          price: 75
+        },
+        {
+          name: "Lemon Soda",
+          description: "A refreshing and zesty drink that perfectly balances tangy citrus notes with a fizzy twist, ideal for quenching your thirst.",
+          price: 50
+        },
+        {
+          name: "Cold Coffee",
+          description: "Indulge in a creamy, refreshing blend that delights the senses with its rich, invigorating flavour.",
+          price: 65
+        }
+      ]
     }
   ]
 
