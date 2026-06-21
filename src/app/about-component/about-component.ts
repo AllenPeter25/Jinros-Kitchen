@@ -28,7 +28,7 @@ export class AboutComponent implements AfterViewInit{
 
   ngAfterViewInit(): void {
     this.cardData = [{
-      title: "5 Years",
+      title: `${new Date().getFullYear() - new Date('1-1-2020').getFullYear()} Years`,
       description: "of Culinary Experience",
       icon: this.experienceIcon
     },

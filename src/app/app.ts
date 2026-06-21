@@ -1,12 +1,12 @@
-import { Component, signal } from '@angular/core';
+import {Component, OnInit, signal} from '@angular/core';
 import {NavigationEnd, RouterOutlet} from '@angular/router';
 import {Header} from './header/header';
 import {FooterComponent} from './footer-component/footer-component';
-import {MenuComponent} from './menu-component/menu-component';
-import {AboutComponent} from './about-component/about-component';
 import {Router} from '@angular/router';
 import {ViewportScroller} from '@angular/common';
 import {filter} from 'rxjs';
+import { inject } from '@vercel/analytics'
+import { injectSpeedInsights } from '@vercel/speed-insights';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +18,7 @@ import {filter} from 'rxjs';
   templateUrl: './app.html',
   styleUrl: './app.less'
 })
-export class App {
+export class App implements OnInit {
   protected readonly title = signal('jinros-kitchen');
   constructor(
     private router: Router,
@@ -29,5 +29,10 @@ export class App {
     ).subscribe(() => {
       this.viewportScroller.scrollToPosition([0, 0]);
     });
+  }
+
+  ngOnInit(): void {
+    inject();
+    injectSpeedInsights()
   }
 }
